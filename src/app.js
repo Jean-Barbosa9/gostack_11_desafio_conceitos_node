@@ -95,9 +95,8 @@ app.put("/repositories/:id", validateUrl, (request, response) => {
             .json({ message: 'No repositories found with this id' });
   }
 
-  const initialLikes = repositories[repositoryIndex].likes;
-  if( initialLikes !== likes) {
-    return response.json({ likes: initialLikes })
+  if(likes >= 0) {
+    return response.json({ likes: 0 })
   }
 
   repositories[repositoryIndex] = {
