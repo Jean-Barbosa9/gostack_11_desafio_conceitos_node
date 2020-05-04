@@ -1,6 +1,6 @@
 # Go Stack 11 - Desafio dos conceitos do Nodejs
 
-Este repositório foi criado com o objetivo de entregar o desafio do módulo de conceitos básicos do Nodejs, do Bootcamp Go Stack versão 11 da Rocketseat.
+Este repositório foi criado com o objetivo de entregar o desafio do módulo de conceitos básicos do Nodejs do Bootcamp Go Stack versão 11 da Rocketseat, através deste link.
 
 ## Escopo do desafio (<small>conteúdo originado do repositório de desafios da Rocketseat</small>)
 
