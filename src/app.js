@@ -30,10 +30,13 @@ function requiredFields(request, response, next) {
 
 function validateUrl(request, response, next) {
   const { url } = request.body;
-  const validUrl = url.startsWith('http://') || url.startsWith('https://');
-  if(!validUrl) {
-    return response.status(400).json({ error: 'Invalid url format' });
+  if (url) {
+    const validUrl = url.startsWith('http://') || url.startsWith('https://');
+    if(!validUrl) {
+      return response.status(400).json({ error: 'Invalid url format' });
+    }
   }
+
   return next();
 }
 
@@ -95,11 +98,11 @@ app.put("/repositories/:id", validateUrl, (request, response) => {
             .json({ message: 'No repositories found with this id' });
   }
 
-  if(likes >= 0) {
+  if (likes >= 0) {
     return response.json({ likes: 0 })
   }
 
-  repositories[repositoryIndex] = {
+  const newRepository = repositories[repositoryIndex] = {
     id,
     title,
     url,
@@ -107,7 +110,7 @@ app.put("/repositories/:id", validateUrl, (request, response) => {
     likes,
   }
   
-  return response.json(repositories[repositoryIndex]);
+  return response.json(newRepository);
 
 });
 
